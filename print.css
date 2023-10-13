@@ -1,0 +1,43 @@
+body {
+     font: 16px Helvetica,
+      Sans-Serif; line-height: 18px;
+      margin-left: 50px;
+      font-size: 14px;
+      }
+      .Personal {
+        content: "";
+        display: table;
+        clear: both;
+        
+      }
+      
+      .container {
+        float: left;
+        width: 70%;
+      }
+      
+      .myimg {
+        float: left;
+        width: 30%;
+        
+      }
+.Professional{
+    margin-top: 0;
+}
+
+
+@page {
+    size: A4;  
+    margin: 0;
+  }
+  
+
+
+body{
+
+    min-width: 768px;
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    box-sizing: border-box;
+    display: block;
+}

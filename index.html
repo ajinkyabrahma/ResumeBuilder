@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Resume Builder </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="print.css" media="print">
+</head>
+
+<body>
+
+  <div class="container" id="cv-form">
+
+    <h1 class="text-center my-2">Resume Builder </h1>
+    <p class="text-center my-2">A resume none can reject.</p>
+    <hr>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <h3 class="text-center my-2">Personal Information</h3>
+
+        <div class="form-group mt-2">
+          <label for="nameField">Your Name</label>
+          <input type="text" class="form-control" id="nameField" placeholder="Enter here" />
+
+          <div class="form-group mt-2">
+            <label for="img">Select image:</label>
+            <input type="file" id="img" name="img" accept="image/*" onchange="onFileSelected(event)">
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="contactField">Your contact</label>
+            <input type="text" class="form-control" id="contactField" placeholder="Enter here" />
+          </div>
+          <div class="form-group mt-2">
+            <label for="addressField">Your Address</label>
+            <textarea class="form-control" id="addressField" rows="5" placeholder="Enter here"></textarea>
+          </div>
+
+          <p class="text-secondary my-2">Important Links</p>
+          <div class="form-group mt-2">
+            <label for="linkedinField">LinkedIn</label>
+            <input type="text" class="form-control" id="linkedinField" placeholder="Enter here" />
+          </div>
+          <div class="form-group mt-2">
+            <label for="githubField">Github</label>
+            <input type="text" class="form-control" id="githubField" placeholder="Enter here" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-6">
+
+        <h3 class="text-center my-2">Professional Information</h3>
+        <div class="form-group mt-2">
+          <label for="">Objective</label>
+          <textarea id="objectiveField" class="form-control" rows="3" placeholder="Enter here"></textarea>
+
+          <div class="form-group mt-2" id="WE">
+            <label for="">Work Experience</label>
+            <textarea class="form-control WEfield" rows="3" placeholder="Enter here"></textarea>
+            <div class="container text-center" id="WEid">
+              <button onclick="AddWE()" class="btn btn-primary btn-sm mt-2">Add</button>
+            </div>
+          </div>
+
+          <div class="form-group mt-2" id="AQ">
+            <label for="">Academic Qualification</label>
+            <textarea class="form-control AQfield" rows="3" placeholder="Enter here"></textarea>
+            <div class="container text-center" id="AQid">
+              <button onclick="AddAQ()" class="btn btn-primary btn-sm mt-2">Add</button>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="form-check">
+        <div class="format">
+          <img src="capture.png" alt="photo" width="200" height="200">
+          <input class="form-check-input" type="radio" name="printFormat" id="format1" value="format1">
+          <label class="form-check-label" for="format1">
+            Format 1
+          </label>
+        </div>
+        <div class="format">
+          <img src="img.png" alt="photo" width="200" height="200">
+          <input class="form-check-input" type="radio" name="printFormat" id="format2" value="format2">
+          <label class="form-check-label" for="format2">
+            Format 2
+          </label>
+        </div>
+      </div>
+
+      <div class="container text-center my-3" id="GRid">
+        <button id="GCV" onclick="GenerateCV()" class="btn btn-primary btn-lg">Generate Resume</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--CV Template 1-->
+
+  <div class="container" class="cv-template">
+
+    <div class="row">
+
+      <div class="col-md-4 mt-4 Personal">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+          alt="candidate-image" class="img-fuild myimg imgT">
+
+
+        <div class="container">
+          <p class="name1T">Ajinkya</p>
+          <p class="contactT">+899900,+789900</p>
+          <p class="addressT">sector delhi</p>
+          <hr />
+
+          <p><a class="linkedinT" href="#1">www.linkedin.com/in/ajinkya-bramhakshatriya-2ab5a4205</a></p>
+          <p><a class="githubT" href="#2">www.github.com/ajinkyabrahma</a></p>
+
+        </div>
+      </div>
+      <div class="col-md-8 py-5 Professional">
+
+        <h1 class="name2T" class="text-center ">Ajinkya Bramhakshatriya</h1>
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Objective</h3>
+          </div>
+          <div class="card-body">
+            <p class="objectiveT"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt orci id
+              libero dictum, ac luctus mauris interdum. Aliquam in urna ac dui interdum auctor. Cras efficitur sit amet
+              augue at laoreet. Nullam a gravida sem. Ut fermentum luctus lacus. Nunc fermentum pretium lectus, ut
+              aliquet
+              arcu tincidunt eget. Cras maximus elementum iaculis. Donec posuere nunc dolor. Maecenas bibendum at metus
+              imperdiet condimentum. Aliquam sodales vitae massa a tempus.</p>
+          </div>
+        </div>
+
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Work Experience</h3>
+          </div>
+          <div class="card-body">
+            <ul class="weT">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Academic Qualification</h3>
+          </div>
+          <div class="card-body">
+            <ul class="aqT">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="PR" class="container my-3 ml-0 text-center">
+          <button id="DownloadButton" onclick="printResume()" class="btn btn-primary ">
+            Download Resume
+          </button>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <!--CV Template 2-->
+
+  <div class="container" class="cv-template">
+
+    <div class="row">
+
+      <div class="col-md-4 mt-4 Personal">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+          alt="candidate-image" class="img-fuild myimg imgT">
+
+
+        <div class="container">
+          <p class="name1T">Ajinkya</p>
+          <p class="contactT">+899900,+789900</p>
+          <p class="addressT">sector delhi</p>
+          <hr />
+
+          <p><a class="linkedinT" href="#1">www.linkedin.com/in/ajinkya-bramhakshatriya-2ab5a4205</a></p>
+          <p><a class="githubT" href="#2">www.github.com/ajinkyabrahma</a></p>
+
+        </div>
+      </div>
+      <div class="col-md-8 py-5 Professional">
+
+        <h1 class="name2T" class="text-center ">Ajinkya Bramhakshatriya</h1>
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Objective</h3>
+          </div>
+          <div class="card-body">
+            <p class="objectiveT"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt orci id
+              libero dictum, ac luctus mauris interdum. Aliquam in urna ac dui interdum auctor. Cras efficitur sit amet
+              augue at laoreet. Nullam a gravida sem. Ut fermentum luctus lacus. Nunc fermentum pretium lectus, ut
+              aliquet
+              arcu tincidunt eget. Cras maximus elementum iaculis. Donec posuere nunc dolor. Maecenas bibendum at metus
+              imperdiet condimentum. Aliquam sodales vitae massa a tempus.</p>
+          </div>
+        </div>
+
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Work Experience</h3>
+          </div>
+          <div class="card-body">
+            <ul class="weT">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header background ">
+            <h3>Academic Qualification</h3>
+          </div>
+          <div class="card-body">
+            <ul class="aqT">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, beatae!</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
